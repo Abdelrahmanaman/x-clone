@@ -4,18 +4,18 @@ import { BellIcon, BookmarkIcon, EllipsisHorizontalCircleIcon, EnvelopeIcon, Hom
 import { IoMdListBox } from "react-icons/io";
 import Link from "next/link";
 import { useMenuOpen } from "../../hooks/store";
-
+import Image from "next/image"
 export const Sidebar = () => {
   const isMenuOpen = useMenuOpen((state) => state.menuOpen);
   const handleOpenMenu = useMenuOpen((state) => state.handleOpenMenu);
 
   return (
-    <aside className={`${isMenuOpen? "flex" : "hidden"} md:flex  md:border-0 border-r-[20px] border-purple-700  md:justify-end w-64  pt-5 justify-between items-start  fixed top-0 z-50 bg-black overflow-auto h-screen`}>
+    <aside className={`${isMenuOpen ? "flex w-64" : "w-0"} md:flex lg:w-56 xl:w-96   transition-all border-zinc-800 duration-300  md:border-r-2  md:justify-end w-64  pt-5 justify-between items-start  fixed top-0 z-50 bg-black overflow-auto h-screen`}>
       <ul className="flex flex-col gap-3  ">
         <li>
           <Link href={"/home"} className="">
             <div className="size-14 justify-center hover:bg-zinc-900 items-center flex  rounded-full transition-all duration-300">
-              <FaXTwitter size={38} color="white" />
+              <Image className="rounded-full" src="/default-profile.svg" alt="Profile Image" width={40} height={40} />
             </div>
           </Link>
         </li>

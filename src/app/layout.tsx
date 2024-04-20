@@ -19,11 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="">
+        <main className="bg-black min-h-screen text-white md:grid grid-cols-4">
           <div className="col-span-1">
             <Sidebar />
           </div>
-          <div className="">
+          <div className="col-span-2">
             <Header />
             {children}
           </div>

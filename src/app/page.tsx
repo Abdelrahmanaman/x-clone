@@ -1,9 +1,9 @@
-import Image from "next/image";
+import TweetCard from "@/components/TweetCard";
 
 export default function Home() {
   return (
-   <main>
-    
-   </main>
+   <section className="p-4">
+    <TweetCard />
+   </section>
   );
 }
