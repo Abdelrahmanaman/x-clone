@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <main className="">
           <div className="col-span-1">
-            {/* <Sidebar /> */}
+            <Sidebar />
           </div>
           <div className="">
             <Header />

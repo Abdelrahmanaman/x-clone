@@ -1,18 +1,22 @@
-"use client"
-import Link from "next/link"
-import Image from "next/image"
-import { FcSettings } from "react-icons/fc"
-import { BsTwitterX } from "react-icons/bs"
-import { usePathname } from "next/navigation"
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import { FcSettings } from "react-icons/fc";
+import { BsTwitterX } from "react-icons/bs";
+import { usePathname } from "next/navigation";
+import { useMenuOpen } from "../../hooks/store";
 const Header = () => {
-    const pathname = usePathname()
-    console.log(pathname)
+  const pathname = usePathname();
+  const isMenuOpen = useMenuOpen((state) => state.menuOpen);
+  const handleOpenMenu = useMenuOpen((state) => state.handleOpenMenu);
+  console.log(isMenuOpen)
+
   return (
     <header className="bg-black px-4 py-2 flex flex-col gap-6">
-      <div className="flex justify-between items-center">
-        <Link href={"/profile"} className="rounded-full border-2 border-black">
+      <div className="flex justify-between items-center md:hidden">   
+        <button onClick={handleOpenMenu}  className="rounded-full border-2 border-black">
           <Image className="rounded-full" src="/default-profile.svg" alt="Profile Image" width={50} height={50} />
-        </Link>
+        </button>
         <BsTwitterX className="size-7 text-white" />
         <FcSettings className="size-7" />
       </div>
@@ -27,6 +31,6 @@ const Header = () => {
       </div>
     </header>
   );
-}
+};
 
-export default Header
+export default Header;

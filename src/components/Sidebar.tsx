@@ -1,14 +1,16 @@
-
+"use client"
 import { FaXTwitter } from "react-icons/fa6";
 import { BellIcon, BookmarkIcon, EllipsisHorizontalCircleIcon, EnvelopeIcon, HomeIcon, MagnifyingGlassIcon, UserIcon, UsersIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { IoMdListBox } from "react-icons/io";
 import Link from "next/link";
+import { useMenuOpen } from "../../hooks/store";
 
 export const Sidebar = () => {
- 
+  const isMenuOpen = useMenuOpen((state) => state.menuOpen);
+  const handleOpenMenu = useMenuOpen((state) => state.handleOpenMenu);
 
   return (
-    <aside className={` md:border-0 border-r-[1px] mborder-zinc-700 md:w-52 md:justify-end  transition-all duration-300 pt-5 flex  justify-between items-start  fixed top-0 z-50 bg-black overflow-auto h-screen`}>
+    <aside className={`${isMenuOpen? "flex" : "hidden"} md:flex  md:border-0 border-r-[20px] border-purple-700  md:justify-end w-64  pt-5 justify-between items-start  fixed top-0 z-50 bg-black overflow-auto h-screen`}>
       <ul className="flex flex-col gap-3  ">
         <li>
           <Link href={"/home"} className="">
@@ -78,7 +80,7 @@ export const Sidebar = () => {
           </Link>
         </li>
       </ul>
-      <button  className={`bg-zinc-900 md:hidden cursor-pointer mr-3 mt-3 text-white rounded-full`}>
+      <button onClick={handleOpenMenu} className={`bg-zinc-900 md:hidden cursor-pointer mr-3 mt-3 text-white rounded-full`}>
         <XMarkIcon className="size-8" />
       </button>
     </aside>
