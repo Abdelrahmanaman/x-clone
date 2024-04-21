@@ -1,5 +1,7 @@
+import { HeartIcon, ChatBubbleOvalLeftIcon } from "@heroicons/react/24/outline";
+import { HeartIcon as HeartIconSolid } from "@heroicons/react/24/solid";
+
 import Image from "next/image";
-import { FaRegComment, FaRegHeart } from "react-icons/fa";
 import { FaRetweet } from "react-icons/fa6";
 
 const TweetCard = () => {
@@ -12,7 +14,7 @@ const TweetCard = () => {
       </div>
       <div className=" w-full flex flex-col gap-4">
         <div className="">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row md:items-center md:gap-2">
             <span className="inline-block">Abdelrahman Aman</span>
             <span className="inline-block text-xs text-gray-400">@abdelrahmanaman</span>
           </div>
@@ -23,15 +25,16 @@ const TweetCard = () => {
         </div>
         <div className="flex gap-4">
           <span className="flex gap-2 items-center">
-            <FaRegComment className="text-gray-400 size-5" />
+            <ChatBubbleOvalLeftIcon className="text-gray-400 cursor-pointer size-5 hover:text-primary" />
             10
           </span>
           <span className="flex gap-2 items-center">
-            <FaRegHeart className="text-gray-400 size-5" />
+            <HeartIcon className="text-gray-400 cursor-pointer size-5 hover:text-red-500" />
+            {/* <HeartIconSolid className="size-5 text-red-600"/> */}
             10
           </span>
           <span className="flex gap-2 items-center">
-            <FaRetweet className="text-gray-400 size-5" />
+            <FaRetweet className="text-gray-400 cursor-pointer size-5 hover:text-primary" />
             10
           </span>
         </div>

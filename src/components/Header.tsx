@@ -9,7 +9,6 @@ const Header = () => {
   const pathname = usePathname();
   const isMenuOpen = useMenuOpen((state) => state.menuOpen);
   const handleOpenMenu = useMenuOpen((state) => state.handleOpenMenu);
-  console.log(isMenuOpen)
 
   return (
     <header className="bg-black px-4 py-2 flex flex-col gap-4 border-b-2 border-zinc-900">
