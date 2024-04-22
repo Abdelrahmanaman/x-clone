@@ -1,17 +1,17 @@
-"use client"
+"use client";
 import { FaXTwitter } from "react-icons/fa6";
 import { BellIcon, BookmarkIcon, EllipsisHorizontalCircleIcon, EnvelopeIcon, HomeIcon, MagnifyingGlassIcon, UserIcon, UsersIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { IoMdListBox } from "react-icons/io";
 import Link from "next/link";
 import { useMenuOpen } from "../../hooks/store";
-import Image from "next/image"
+import Image from "next/image";
 export const Sidebar = () => {
   const isMenuOpen = useMenuOpen((state) => state.menuOpen);
   const handleOpenMenu = useMenuOpen((state) => state.handleOpenMenu);
 
   return (
-    <aside className={`${isMenuOpen ? "flex w-64" : "w-0"} md:flex lg:w-56 xl:w-96   transition-all border-zinc-800 duration-300  md:border-r-2  md:justify-end w-64  pt-5 justify-between items-start  fixed top-0 z-50 bg-black overflow-auto h-screen`}>
-      <ul className="flex flex-col gap-3  ">
+    <aside className={`${isMenuOpen ? "flex w-64" : "w-0"}  md:w-56 lg:w-56  xl:w-96  transition-all border-zinc-800 duration-300  md:border-r-2 flex  md:justify-center md:px-20 w-0 sm:w-0   pt-5 justify-between items-start  fixed top-0 z-50 bg-black overflow-auto h-screen`}>
+      <ul className="flex flex-col gap-3">
         <li>
           <Link href={"/home"} className="">
             <div className="size-14 justify-center hover:bg-zinc-900 items-center flex  rounded-full transition-all duration-300">

@@ -1,10 +1,19 @@
 import { HeartIcon, ChatBubbleOvalLeftIcon } from "@heroicons/react/24/outline";
-import { HeartIcon as HeartIconSolid } from "@heroicons/react/24/solid";
-
+import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
+import Link from "next/link";
 import { FaRetweet } from "react-icons/fa6";
 
-const TweetCard = () => {
+const TweetCard = async () => {
+  // try {
+  //   const prisma = new PrismaClient
+  //   const datas =  await prisma.user.findMany()
+  //   console.log(datas);
+  // } catch (err) {
+  //   if (err instanceof Error) {
+  //     console.error(err.message);
+  //   } 
+  // }
   return (
     <article className="flex gap-2 overflow-x-auto">
       <div className=" ">
@@ -24,10 +33,10 @@ const TweetCard = () => {
           </div>
         </div>
         <div className="flex gap-4">
-          <span className="flex gap-2 items-center">
+          <Link href={`tweet/${1}`} className="flex gap-2 items-center">
             <ChatBubbleOvalLeftIcon className="text-gray-400 cursor-pointer size-5 hover:text-primary" />
             10
-          </span>
+          </Link>
           <span className="flex gap-2 items-center">
             <HeartIcon className="text-gray-400 cursor-pointer size-5 hover:text-red-500" />
             {/* <HeartIconSolid className="size-5 text-red-600"/> */}

@@ -10,7 +10,7 @@ const config: Config = {
       },
       colors: {
         primary: "hsl(204, 78%, 47%)",
-        
+        secondary: "hsl(204, 78%, 40%)",
       },
     },
   },
